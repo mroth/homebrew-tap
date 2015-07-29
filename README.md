@@ -1,2 +1,3 @@
 # homebrew-formulas
-Homebrew 
+
+formulas to install my software for things not in homebrew-main.
