@@ -6,14 +6,22 @@ class Scmpuff < Formula
   depends_on "go" => :build
 
   def install
-    ENV["GOPATH"] = buildpath
-    system "go build -o bin/scmpuff -ldflags '-X main.VERSION #{version}'"
+    # Go assumes things being compiled are located within a specific directory
+    # hierarchy in the user $GOPATH. Since it insists on absoute import paths,
+    # we need to temporarily create this scenario so the vendored package
+    # hierarchy is find-able by gotools at compile time.
+    gopath = "#{buildpath}/.go"
+    mkdir_p "#{gopath}/src/github.com/mroth"
+    ln_s buildpath, "#{gopath}/src/github.com/mroth/scmpuff"
+
+    # do a compile, manually specifying version so that scmpuff's build script
+    # does not do it's normal version detection which depends on being in a git
+    # repository -- instead let homebrew recipe specify the version number.
+    system "GOPATH=#{gopath} go build -o bin/scmpuff -ldflags '-X main.VERSION #{version}'"
     bin.install "bin/scmpuff"
   end
 
   test do
-    HOMEBREW_REPOSITORY.cd do
-      assert_equal "zzz", shell_output("export e1=zzz && #{bin}/scmpuff expand 1").strip
-    end
+    assert_equal "abc", shell_output("export e1=abc && #{bin}/scmpuff expand 1").strip
   end
 end
