@@ -2,9 +2,9 @@
 class Bump < Formula
   desc "Draft GitHub Release of the next semver in web browser"
   homepage "https://github.com/mroth/bump"
-  url "https://github.com/mroth/bump/releases/download/v0.1.0/bump_0.1.0_mac_x64.tar.gz"
-  version "0.1.0"
-  sha256 "64ff0d2cd497a437daf59fdbc0cd759d5cc740bb931aac39ede31bc89213ea85"
+  url "https://github.com/mroth/bump/releases/download/v0.2.0/bump_0.2.0_mac_x64.tar.gz"
+  version "0.2.0"
+  sha256 "21694c08c1288eb931794cfe1886c6520d4c71720a5a62c933c995d474c8d453"
 
   def install
     bin.install "bump"
