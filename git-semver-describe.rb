@@ -2,14 +2,14 @@
 class GitSemverDescribe < Formula
   desc "git describe with semantic version 2.0 compatible names"
   homepage "https://github.com/mroth/semverdesc"
-  version "0.1.0-rc.2"
+  version "0.1.0"
 
   if OS.mac?
-    url "https://github.com/mroth/semverdesc/releases/download/v0.1.0-rc.2/git-semver-describe_0.1.0-rc.2_mac_x64.tar.gz"
-    sha256 "0510a3089f4987f799279786abb8693044cd19c4abc56252ae548bce899927b9"
+    url "https://github.com/mroth/semverdesc/releases/download/v0.1.0/git-semver-describe_0.1.0_mac_x64.tar.gz"
+    sha256 "8534fe9c417ab1ee5f163682a5ec72d96f66c4976c4606e0bea4bc536b8cc761"
   elsif OS.linux?
-    url "https://github.com/mroth/semverdesc/releases/download/v0.1.0-rc.2/git-semver-describe_0.1.0-rc.2_linux_x64.tar.gz"
-    sha256 "29ccb192a1c9c01a2895c4d5093b5a81358d334ac991205cdd71273407763e6d"
+    url "https://github.com/mroth/semverdesc/releases/download/v0.1.0/git-semver-describe_0.1.0_linux_x64.tar.gz"
+    sha256 "9fa7d2dee34c246d727e5d7086b956d8c455d9407a87595057e44abf206a7bc4"
   end
 
   def install
