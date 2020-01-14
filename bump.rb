@@ -2,16 +2,16 @@
 class Bump < Formula
   desc "Draft GitHub Release of the next semver in web browser"
   homepage "https://github.com/mroth/bump"
-  version "0.2.1"
+  version "0.2.2"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/mroth/bump/releases/download/v0.2.1/bump_0.2.1_mac_x64.tar.gz"
-    sha256 "3af44391abe21e58851427c76cc03946c33ea0ee077e88572a72785ba57dc391"
+    url "https://github.com/mroth/bump/releases/download/v0.2.2/bump_0.2.2_mac_x64.tar.gz"
+    sha256 "947ce6acfe18f2bf5aa94e0028e4fa4bda1151ed9ab031bc342d623b34d00350"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/mroth/bump/releases/download/v0.2.1/bump_0.2.1_linux_x64.tar.gz"
-      sha256 "c29e35a6e9e31ae5afeb5b60563940bba44c14e00f252855cc1e6c580a8eeae0"
+      url "https://github.com/mroth/bump/releases/download/v0.2.2/bump_0.2.2_linux_x64.tar.gz"
+      sha256 "51806eaa9138559713b98974262d49f81456cded840c9c06877efe5c997ae2e4"
     end
   end
 
