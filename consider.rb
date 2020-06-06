@@ -1,7 +1,7 @@
 class Consider < Formula
   desc "Quickly check code comments for subtle racism/sexism/ableism"
   homepage "https://github.com/mroth/consider"
-  url "https://github.com/mroth/consider.git", :tag => "v0.1.2"
+  url "https://github.com/mroth/consider.git", :tag => "v0.1.3"
   head "https://github.com/mroth/consider.git"
 
   depends_on "ripgrep"
