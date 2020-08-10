@@ -2,16 +2,16 @@
 class Deepclean < Formula
   desc "Scan and remove junk files from source code directories"
   homepage "https://github.com/mroth/deepclean"
-  version "0.2.0"
+  version "0.2.1"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/mroth/deepclean/releases/download/v0.2.0/deepclean_0.2.0_mac_x64.tar.gz"
-    sha256 "ea7ec1cf79c4cdca272e47d29ad824e092117620b70e228a825b0a00c97f3ad7"
+    url "https://github.com/mroth/deepclean/releases/download/v0.2.1/deepclean_0.2.1_mac_x64.tar.gz"
+    sha256 "eac463b0ad97ba30f775238e85712f554a7b936dcc96847a5da0cee0fbbee4ac"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/mroth/deepclean/releases/download/v0.2.0/deepclean_0.2.0_linux_x64.tar.gz"
-      sha256 "483ce8cb00e5952797356df02e5bf0884837b07bc765061a151ce3657503a0fb"
+      url "https://github.com/mroth/deepclean/releases/download/v0.2.1/deepclean_0.2.1_linux_x64.tar.gz"
+      sha256 "7cf745f4653ca9b3da7e1caab2d61b4de834774d2db565a39afaeaa027db4388"
     end
   end
 
