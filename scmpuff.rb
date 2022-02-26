@@ -5,27 +5,21 @@
 class Scmpuff < Formula
   desc "Adds numbered shortcuts for common git commands."
   homepage "https://mroth.github.io/scmpuff/"
-  version "0.4.0"
+  version "0.5.0"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/mroth/scmpuff/releases/download/v0.4.0/scmpuff_0.4.0_macOS_arm64.tar.gz"
-      sha256 "e15fdafe4d6044579d98ad0012a7850f7b197cf1148c61c809e9ea5353256bb8"
+    if Hardware::CPU.intel?
+      url "https://github.com/mroth/scmpuff/releases/download/v0.5.0/scmpuff_0.5.0_macOS_x64.tar.gz"
+      sha256 "3e8263bb7eeeb6c26ba0e4216c2d3b14c24df17a24a429464a9cec75bb532c00"
 
       def install
         bin.install "scmpuff"
       end
     end
-    url "https://github.com/mroth/scmpuff/releases/download/v0.4.0/scmpuff_0.4.0_macOS_all.tar.gz"
-    sha256 "be807a233e2925c49e6e62bf944d0aa084f8177d15ced521ce46cbd171970907"
-
-    def install
-      bin.install "scmpuff"
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/mroth/scmpuff/releases/download/v0.4.0/scmpuff_0.4.0_macOS_x64.tar.gz"
-      sha256 "980e445a2abce35a06ac96f8d0b1bcf59eaca057318ea397bf4d4c099486425b"
+    if Hardware::CPU.arm?
+      url "https://github.com/mroth/scmpuff/releases/download/v0.5.0/scmpuff_0.5.0_macOS_arm64.tar.gz"
+      sha256 "01f6587bfc93a48700506621592508096dfc4a19f239c94ae056c89b74daea8e"
 
       def install
         bin.install "scmpuff"
@@ -35,16 +29,16 @@ class Scmpuff < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/mroth/scmpuff/releases/download/v0.4.0/scmpuff_0.4.0_linux_x64.tar.gz"
-      sha256 "4c44f35b868ca58e443ed73b93d8c859dc46f5f8136594b0440cf19635240e18"
+      url "https://github.com/mroth/scmpuff/releases/download/v0.5.0/scmpuff_0.5.0_linux_x64.tar.gz"
+      sha256 "3a65755d95ad29c61e5e43012a4466f2aff8ddc3c116f52a02253f2b8ab6da35"
 
       def install
         bin.install "scmpuff"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mroth/scmpuff/releases/download/v0.4.0/scmpuff_0.4.0_linux_arm64.tar.gz"
-      sha256 "18e35c20e82efbf1bb8acdf0f03d72c1e90bc43a0066e6a5cab23ff52505a115"
+      url "https://github.com/mroth/scmpuff/releases/download/v0.5.0/scmpuff_0.5.0_linux_arm64.tar.gz"
+      sha256 "dd94dff4b00646b2bf062b61f5c6a00d16d9a71b605c0c4528757767abe4559c"
 
       def install
         bin.install "scmpuff"
