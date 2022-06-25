@@ -5,20 +5,20 @@
 class Ramdisk < Formula
   desc "Convenience wrapper for creating RAM disks."
   homepage "https://github.com/mroth/ramdisk"
-  version "0.1.1"
+  version "0.1.2"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/mroth/ramdisk/releases/download/v0.1.1/ramdisk_0.1.1_macOS_arm64.tar.gz"
-      sha256 "8be5be38866f8c01ac01a54232a5f4313b13264a30a439293287b271c04bd33b"
+      url "https://github.com/mroth/ramdisk/releases/download/v0.1.2/ramdisk_0.1.2_macOS_arm64.tar.gz"
+      sha256 "a771699cdebbe0f9e84ccc6196172fbc106cd3e6d1b2c58f63b7bf5cb54f18f7"
 
       def install
         bin.install "ramdisk"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mroth/ramdisk/releases/download/v0.1.1/ramdisk_0.1.1_macOS_x64.tar.gz"
-      sha256 "0be8ca2c997c91831b284853d921572eda1c0a739c6b5efb8ff7446f6d4fb73b"
+      url "https://github.com/mroth/ramdisk/releases/download/v0.1.2/ramdisk_0.1.2_macOS_x64.tar.gz"
+      sha256 "ddf17b1c9f72dbea6333a1a1bd3277f51db9eabea3a9057587b363780de17d28"
 
       def install
         bin.install "ramdisk"
@@ -28,16 +28,16 @@ class Ramdisk < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mroth/ramdisk/releases/download/v0.1.1/ramdisk_0.1.1_linux_arm64.tar.gz"
-      sha256 "7598640f23f759a8b9db6fcbd5ec1516c025eded2ff9766b1aac2ce92d0d6727"
+      url "https://github.com/mroth/ramdisk/releases/download/v0.1.2/ramdisk_0.1.2_linux_arm64.tar.gz"
+      sha256 "4b1a8d4f0ca59fed107f8b612bc95e0e436dfae935b3760ca1da2cf1730794bf"
 
       def install
         bin.install "ramdisk"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mroth/ramdisk/releases/download/v0.1.1/ramdisk_0.1.1_linux_x64.tar.gz"
-      sha256 "507433e02d79566999e5361a5d685a1541ab56899aa7b1974bfb85d8b0ef5c32"
+      url "https://github.com/mroth/ramdisk/releases/download/v0.1.2/ramdisk_0.1.2_linux_x64.tar.gz"
+      sha256 "da18418f5f197f751ace82ce12ef4a255b7b124d9c9382ba2313299645634d31"
 
       def install
         bin.install "ramdisk"
