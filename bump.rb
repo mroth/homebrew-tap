@@ -5,11 +5,11 @@
 class Bump < Formula
   desc "Draft GitHub Release of the next semver in web browser"
   homepage "https://github.com/mroth/bump"
-  version "0.2.4"
+  version "0.2.5"
 
   on_macos do
-    url "https://github.com/mroth/bump/releases/download/v0.2.4/bump_0.2.4_darwin_all.tar.gz"
-    sha256 "e3765890e8145e8e7b9e76375a932c7eb56b2c5a85a6ae67042c2a148fc93ffc"
+    url "https://github.com/mroth/bump/releases/download/v0.2.5/bump_0.2.5_darwin_all.tar.gz"
+    sha256 "f586cbaf4d0f9b7cc93697cb0442e8492e796d9eaa609601238b2b2b9bf3db33"
 
     def install
       bin.install "bump"
@@ -17,20 +17,24 @@ class Bump < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mroth/bump/releases/download/v0.2.4/bump_0.2.4_linux_arm64.tar.gz"
-      sha256 "df6aa0838c27b212a6d9177ffd8875c952f0163a282aefee64efa515abc0d1c7"
+    if Hardware::CPU.intel?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/mroth/bump/releases/download/v0.2.5/bump_0.2.5_linux_amd64.tar.gz"
+        sha256 "cb421c5ca751a90440c1cad0fd2af226cb5d1a1c7945214a0afb62fa632394a1"
 
-      def install
-        bin.install "bump"
+        def install
+          bin.install "bump"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/mroth/bump/releases/download/v0.2.4/bump_0.2.4_linux_amd64.tar.gz"
-      sha256 "46c1ea1de8a53d37331d7edc27f48497b95987ceededd9c4a2e253f455e4374f"
+    if Hardware::CPU.arm?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/mroth/bump/releases/download/v0.2.5/bump_0.2.5_linux_arm64.tar.gz"
+        sha256 "461b2465babe7e57e21614ed74cb2ed665d607ae10d5c6fc8a41e2b1d35fadda"
 
-      def install
-        bin.install "bump"
+        def install
+          bin.install "bump"
+        end
       end
     end
   end
