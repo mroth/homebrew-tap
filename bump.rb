@@ -5,36 +5,40 @@
 class Bump < Formula
   desc "Draft GitHub Release of the next semver in web browser"
   homepage "https://github.com/mroth/bump"
-  version "0.2.5"
+  version "0.2.6-rc.1"
 
   on_macos do
-    url "https://github.com/mroth/bump/releases/download/v0.2.5/bump_0.2.5_darwin_all.tar.gz"
-    sha256 "f586cbaf4d0f9b7cc93697cb0442e8492e796d9eaa609601238b2b2b9bf3db33"
+    if Hardware::CPU.intel?
+      url "https://github.com/mroth/bump/releases/download/v0.2.6-rc.1/bump_0.2.6-rc.1_darwin_amd64.tar.gz"
+      sha256 "7b2255513646e359fe48e7684828ab56aaac6ad48af6927aa401ff727e57746b"
 
-    def install
-      bin.install "bump"
+      def install
+        bin.install "bump"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/mroth/bump/releases/download/v0.2.6-rc.1/bump_0.2.6-rc.1_darwin_arm64.tar.gz"
+      sha256 "75e91f215e414c8c3365c4722d545b7a383a0a21fcd58f70edd55f70439245af"
+
+      def install
+        bin.install "bump"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/mroth/bump/releases/download/v0.2.5/bump_0.2.5_linux_amd64.tar.gz"
-        sha256 "cb421c5ca751a90440c1cad0fd2af226cb5d1a1c7945214a0afb62fa632394a1"
-
-        def install
-          bin.install "bump"
-        end
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/mroth/bump/releases/download/v0.2.6-rc.1/bump_0.2.6-rc.1_linux_amd64.tar.gz"
+      sha256 "fed5e64ebe160cae8a21c50991b842df2467dc369fb98ec72713b85a1c6d557e"
+      def install
+        bin.install "bump"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/mroth/bump/releases/download/v0.2.5/bump_0.2.5_linux_arm64.tar.gz"
-        sha256 "461b2465babe7e57e21614ed74cb2ed665d607ae10d5c6fc8a41e2b1d35fadda"
-
-        def install
-          bin.install "bump"
-        end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/mroth/bump/releases/download/v0.2.6-rc.1/bump_0.2.6-rc.1_linux_arm64.tar.gz"
+      sha256 "6561b84ecea1c60d3b5a08918b4dffeb70a8462d19bc71564d9ec5954725b98a"
+      def install
+        bin.install "bump"
       end
     end
   end
