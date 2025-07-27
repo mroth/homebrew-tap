@@ -5,20 +5,20 @@
 class Deepclean < Formula
   desc "Scan and remove junk files from source code directories"
   homepage "https://github.com/mroth/deepclean"
-  version "0.3.0"
+  version "0.3.1"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/mroth/deepclean/releases/download/v0.3.0/deepclean_0.3.0_darwin_arm64.tar.gz"
-      sha256 "eabb60fecd24da4e6660509a5611424b4c1c913bf3fd27feeba08f9ba0de17a1"
+    if Hardware::CPU.intel?
+      url "https://github.com/mroth/deepclean/releases/download/v0.3.1/deepclean_0.3.1_darwin_amd64.tar.gz"
+      sha256 "d45a9a4a0453339c22a893f8b05109b17921de70d62c9ad72c1ad28bc9905eb6"
 
       def install
         bin.install "deepclean"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/mroth/deepclean/releases/download/v0.3.0/deepclean_0.3.0_darwin_amd64.tar.gz"
-      sha256 "e7a2f133c0abb0a8aca7f0eb01fa671ce39fca1a22f7563901150e420cbb720c"
+    if Hardware::CPU.arm?
+      url "https://github.com/mroth/deepclean/releases/download/v0.3.1/deepclean_0.3.1_darwin_arm64.tar.gz"
+      sha256 "f6a92fcf9ca281126ab03e3b55aa107141ffc443482e45b02562bc10cdc89b91"
 
       def install
         bin.install "deepclean"
@@ -27,18 +27,16 @@ class Deepclean < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/mroth/deepclean/releases/download/v0.3.0/deepclean_0.3.0_linux_amd64.tar.gz"
-      sha256 "bfe5d575cb28860cd81258d3517d4459549634a5e1006e7570c8df15d42e499a"
-
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/mroth/deepclean/releases/download/v0.3.1/deepclean_0.3.1_linux_amd64.tar.gz"
+      sha256 "90049a0fb32416eb7784650a6d05c49eb14a73989262882aa4bbb5bd7a333b22"
       def install
         bin.install "deepclean"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mroth/deepclean/releases/download/v0.3.0/deepclean_0.3.0_linux_arm64.tar.gz"
-      sha256 "502fccbb1125dec0589efe36fc62dc2b817d052c3787f8408853565d6c0a1ff9"
-
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/mroth/deepclean/releases/download/v0.3.1/deepclean_0.3.1_linux_arm64.tar.gz"
+      sha256 "c445ec19f752b11698bc1512d51846df2ef40c3c3fe2a04ad8a63b717d3dab32"
       def install
         bin.install "deepclean"
       end
