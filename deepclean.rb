@@ -5,20 +5,20 @@
 class Deepclean < Formula
   desc "Scan and remove junk files from source code directories"
   homepage "https://github.com/mroth/deepclean"
-  version "0.3.1"
+  version "0.3.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/mroth/deepclean/releases/download/v0.3.1/deepclean_0.3.1_darwin_amd64.tar.gz"
-      sha256 "d45a9a4a0453339c22a893f8b05109b17921de70d62c9ad72c1ad28bc9905eb6"
+      url "https://github.com/mroth/deepclean/releases/download/v0.3.2/deepclean_0.3.2_darwin_amd64.tar.gz"
+      sha256 "0562d73b87376bc8bb879f72c53e31ee456f49d37b9d018823eef9f2171e96b3"
 
       def install
         bin.install "deepclean"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/mroth/deepclean/releases/download/v0.3.1/deepclean_0.3.1_darwin_arm64.tar.gz"
-      sha256 "f6a92fcf9ca281126ab03e3b55aa107141ffc443482e45b02562bc10cdc89b91"
+      url "https://github.com/mroth/deepclean/releases/download/v0.3.2/deepclean_0.3.2_darwin_arm64.tar.gz"
+      sha256 "1bd2b881e430ef6de1c6cc70f3e9dc0f60f48012a4cb76854826bfc80c4513ae"
 
       def install
         bin.install "deepclean"
@@ -28,15 +28,15 @@ class Deepclean < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/mroth/deepclean/releases/download/v0.3.1/deepclean_0.3.1_linux_amd64.tar.gz"
-      sha256 "90049a0fb32416eb7784650a6d05c49eb14a73989262882aa4bbb5bd7a333b22"
+      url "https://github.com/mroth/deepclean/releases/download/v0.3.2/deepclean_0.3.2_linux_amd64.tar.gz"
+      sha256 "cf73ecd8a9ee08726a0c9c47e8a05dcad1b9c55c97162ef9a7b3cd1e3778afbb"
       def install
         bin.install "deepclean"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/mroth/deepclean/releases/download/v0.3.1/deepclean_0.3.1_linux_arm64.tar.gz"
-      sha256 "c445ec19f752b11698bc1512d51846df2ef40c3c3fe2a04ad8a63b717d3dab32"
+      url "https://github.com/mroth/deepclean/releases/download/v0.3.2/deepclean_0.3.2_linux_arm64.tar.gz"
+      sha256 "689ee361b3128d8a92284634c945556501695cc68316dff690f3b6015b71aab7"
       def install
         bin.install "deepclean"
       end
