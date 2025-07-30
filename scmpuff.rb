@@ -5,21 +5,21 @@
 class Scmpuff < Formula
   desc "Adds numbered shortcuts for common git commands."
   homepage "https://mroth.github.io/scmpuff/"
-  version "0.5.0"
+  version "0.6.0-rc.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/mroth/scmpuff/releases/download/v0.5.0/scmpuff_0.5.0_macOS_x64.tar.gz"
-      sha256 "3e8263bb7eeeb6c26ba0e4216c2d3b14c24df17a24a429464a9cec75bb532c00"
+      url "https://github.com/mroth/scmpuff/releases/download/v0.6.0-rc.1/scmpuff_0.6.0-rc.1_darwin_amd64.tar.gz"
+      sha256 "33f7449549fa92481aab57786194904d62179a3b04ec6bf74fd005929021001c"
 
       def install
         bin.install "scmpuff"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/mroth/scmpuff/releases/download/v0.5.0/scmpuff_0.5.0_macOS_arm64.tar.gz"
-      sha256 "01f6587bfc93a48700506621592508096dfc4a19f239c94ae056c89b74daea8e"
+      url "https://github.com/mroth/scmpuff/releases/download/v0.6.0-rc.1/scmpuff_0.6.0-rc.1_darwin_arm64.tar.gz"
+      sha256 "3fa0c9ed963a0c3c4fa07cdfb9b8e56be9a7737f333636a0b8bf0808a3699a88"
 
       def install
         bin.install "scmpuff"
@@ -28,18 +28,23 @@ class Scmpuff < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/mroth/scmpuff/releases/download/v0.5.0/scmpuff_0.5.0_linux_x64.tar.gz"
-      sha256 "3a65755d95ad29c61e5e43012a4466f2aff8ddc3c116f52a02253f2b8ab6da35"
-
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/mroth/scmpuff/releases/download/v0.6.0-rc.1/scmpuff_0.6.0-rc.1_linux_amd64.tar.gz"
+      sha256 "0affebe67ffd1c722579a0a6dabae751658259787eb8be0e9568318ff132b345"
       def install
         bin.install "scmpuff"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mroth/scmpuff/releases/download/v0.5.0/scmpuff_0.5.0_linux_arm64.tar.gz"
-      sha256 "dd94dff4b00646b2bf062b61f5c6a00d16d9a71b605c0c4528757767abe4559c"
-
+    if Hardware::CPU.arm? and !Hardware::CPU.is_64_bit?
+      url "https://github.com/mroth/scmpuff/releases/download/v0.6.0-rc.1/scmpuff_0.6.0-rc.1_linux_armv6.tar.gz"
+      sha256 "3a7193ddcc86b3206df142154a56eb7201787bc49282a5b51b63674282644ab7"
+      def install
+        bin.install "scmpuff"
+      end
+    end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/mroth/scmpuff/releases/download/v0.6.0-rc.1/scmpuff_0.6.0-rc.1_linux_arm64.tar.gz"
+      sha256 "3a6431a4216a0621d59d943e6cce6172ef027af50632a8356e575e0e8df723fb"
       def install
         bin.install "scmpuff"
       end
